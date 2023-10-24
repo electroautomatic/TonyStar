@@ -1,0 +1,68 @@
+@startuml OnlineStoreInformationSystem
+
+!define ENTITY class
+
+title Domain model class diagram  "Online Store Information System"
+
+ENTITY Order {
+  - OrderID
+  - OrderDate
+  - OrderStatus
+}
+
+ENTITY Client {
+  - ClientID
+  - Name
+  - Surname
+  - DateOfBirth
+  - Email
+  - Password
+}
+
+ENTITY ClientAddress {
+  - AddressID
+  - Country
+  - City
+  - PostalCode
+  - Street
+  - Home
+  - Apartment
+}
+
+ENTITY PaymentMethod {
+  - PaymentMethodID
+  - MethodType
+}
+
+ENTITY DeliveryMethod {
+  - DeliveryMethodID
+  - MethodType
+}
+
+ENTITY Goods {
+  - GoodsID
+  - Title
+  - Price
+  - Category
+  - Brand
+  - Color
+  - Weight
+  - Volume
+  - QuantityInStock
+}
+
+ENTITY PaymentStatus {
+  - PaymentStatusID
+  - Status
+}
+
+
+Order "1" -- "1" Client
+Order "1" -- "1" ClientAddress
+Order "1" -- "1" PaymentMethod
+Order "1" -- "1" DeliveryMethod
+Order "1" -- "0..*" Goods
+Order "1" -- "1" PaymentStatus
+Client "1" -- "0..*" ClientAddress
+
+@enduml

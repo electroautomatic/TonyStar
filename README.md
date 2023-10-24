@@ -1,2 +1,0 @@
-# TonyStar
-Lighting Shop.
