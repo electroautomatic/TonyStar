@@ -8,6 +8,11 @@ ENTITY Order {
   - OrderID
   - OrderDate
   - OrderStatus
+  - {PaymentMethod}
+  - {DeliveryMethod}
+  - {Goods}
+  - {PaymentMethod}
+  - {ClientAddress}
 }
 
 ENTITY Client {
@@ -17,6 +22,8 @@ ENTITY Client {
   - DateOfBirth
   - Email
   - Password
+  - {ClientAddress}
+  - {Order}
 }
 
 ENTITY ClientAddress {
@@ -57,10 +64,10 @@ ENTITY PaymentStatus {
 }
 
 
-Order "1" -- "1" Client
+Client "1" -- "0..*" Order  
 Order "1" -- "1" ClientAddress
-Order "1" -- "1" PaymentMethod
-Order "1" -- "1" DeliveryMethod
+Order "1" -- "1..3" PaymentMethod
+Order "1" -- "1..2" DeliveryMethod
 Order "1" -- "0..*" Goods
 Order "1" -- "1" PaymentStatus
 Client "1" -- "0..*" ClientAddress
