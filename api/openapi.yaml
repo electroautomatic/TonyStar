@@ -1,9 +1,50 @@
-openapi: 3.0.3
+openapi: 3.0.0
 info:
-  title: $Title$
-  description: $Title$
-  version: 1.0.0
+  title: TonyStar API
+  description: This API is used to interact with the TonyStar backend system.
+  version: 0.0.1
 servers:
-  - url: '$https$'
+  - url: http://localhost:8080/api/v1
+    description: Dev server
 paths:
-  $END$
+  /clients:
+    get:
+      summary: Returns a list of clients.
+      # description: Optional extended description in CommonMark or HTML.
+      tags: 
+        - Clients
+      operationId: getAllClients
+      responses:
+        '200':    # status code
+          description: Successful response with customer list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Clients'
+components:
+  schemas:
+    Client:
+      type: object
+      required:
+       - Name
+       - Surname
+       - DateOfBirth
+       - Email
+      properties:
+       Name:
+        type: string
+        example: Anton
+       Surname:
+        type: string
+        example: "Isakov"
+       DateOfBirth:
+        type: string
+        format: 20.11.1982
+       Email:
+        type: string
+        example: electroautomatic@gmail.com
+      
+    Clients:
+      type: array
+      items:
+        $ref: '#/components/schemas/Client'

@@ -10,13 +10,13 @@ ENTITY Order {
   - OrderStatus
   - {PaymentMethod}
   - {DeliveryMethod}
-  - {Goods}
+  - {Product}
   - {PaymentMethod}
-  - {ClientAddress}
+  - {CustomerAddress}
 }
 
-ENTITY Client {
-  - ClientID
+ENTITY Customer {
+  - CustomerID
   - Name
   - Surname
   - DateOfBirth
@@ -26,7 +26,7 @@ ENTITY Client {
   - {Order}
 }
 
-ENTITY ClientAddress {
+ENTITY CustomerAddress {
   - AddressID
   - Country
   - City
@@ -46,8 +46,8 @@ ENTITY DeliveryMethod {
   - MethodType
 }
 
-ENTITY Goods {
-  - GoodsID
+ENTITY Product {
+  - ProductID
   - Title
   - Price
   - Category
@@ -64,12 +64,12 @@ ENTITY PaymentStatus {
 }
 
 
-Client "1" -- "0..*" Order  
-Order "1" -- "1" ClientAddress
+Customer "1" -- "0..*" Order
+Order "1" -- "1" CustomerAddress
 Order "1" -- "1..3" PaymentMethod
 Order "1" -- "1..2" DeliveryMethod
-Order "1" -- "0..*" Goods
+Order "1" -- "0..*" Product
 Order "1" -- "1" PaymentStatus
-Client "1" -- "0..*" ClientAddress
+Customer "1" -- "0..*" CustomerAddress
 
 @enduml
