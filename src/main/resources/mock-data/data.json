@@ -1,0 +1,167 @@
+{
+  "customers": [
+    {
+      "name": "Lev",
+      "surname": "Tolstoy",
+      "dayOfBirth": "1828-09-09",
+      "email": "lev@gmail.com"
+    },
+    {
+      "name": "Fyodor",
+      "surname": "Dostoevsky",
+      "dayOfBirth": "1821-11-11",
+      "email": "dostoevsky@gmail.com"
+    },
+    {
+      "name": "Alexander",
+      "surname": "Pushkin",
+      "dayOfBirth": "1799-06-06",
+      "email": "pushkin@gmail.com"
+    },
+    {
+      "name": "Ivan",
+      "surname": "Turgenev",
+      "dayOfBirth": "1818-11-09",
+      "email": "turgenev@gmail.com"
+    },
+    {
+      "name": "Anton",
+      "surname": "Chekhov",
+      "dayOfBirth": "1860-01-29",
+      "email": "chekhov@gmail.com"
+    },
+    {
+      "name": "Mikhail",
+      "surname": "Lermontov",
+      "dayOfBirth": "1814-10-15",
+      "email": "lermontov@gmail.com"
+    },
+    {
+      "name": "Nikolai",
+      "surname": "Gogol",
+      "dayOfBirth": "1809-03-31",
+      "email": "gogol@gmail.com"
+    },
+    {
+      "name": "Ivan",
+      "surname": "Bunin",
+      "dayOfBirth": "1870-10-22",
+      "email": "bunin@gmail.com"
+    },
+    {
+      "name": "Anna",
+      "surname": "Akmatova",
+      "dayOfBirth": "1889-06-23",
+      "email": "akmatova@gmail.com"
+    },
+    {
+      "name": "Boris",
+      "surname": "Pasternak",
+      "dayOfBirth": "1890-02-10",
+      "email": "pasternak@gmail.com"
+    }
+  ],
+
+  "products": [
+    {
+      "title": "Modern Desk Lamp",
+      "price": "60",
+      "category": "Table Lamp",
+      "brand": "Osram",
+      "color": "Silver",
+      "weight": "2.5",
+      "volume": "3",
+      "quantityInStock": "15"
+    },
+    {
+      "title": "Industrial Floor Lamp",
+      "price": "120",
+      "category": "Floor Lamp",
+      "brand": "Philips",
+      "color": "Black",
+      "weight": "7",
+      "volume": "8",
+      "quantityInStock": "10"
+    },
+    {
+      "title": "Classic Chandelier",
+      "price": "250",
+      "category": "Chandelier",
+      "brand": "Osram",
+      "color": "Gold",
+      "weight": "12",
+      "volume": "15",
+      "quantityInStock": "5"
+    },
+    {
+      "title": "Vintage Table Lamp",
+      "price": "70",
+      "category": "Table Lamp",
+      "brand": "Philips",
+      "color": "Bronze",
+      "weight": "3",
+      "volume": "4",
+      "quantityInStock": "20"
+    },
+    {
+      "title": "Contemporary Ceiling Light",
+      "price": "180",
+      "category": "Ceiling Light",
+      "brand": "Osram",
+      "color": "White",
+      "weight": "6",
+      "volume": "10",
+      "quantityInStock": "8"
+    },
+    {
+      "title": "Rustic Wall Sconce",
+      "price": "40",
+      "category": "Wall Sconce",
+      "brand": "Philips",
+      "color": "Brown",
+      "weight": "2",
+      "volume": "2",
+      "quantityInStock": "12"
+    },
+    {
+      "title": "Minimalist Desk Lamp",
+      "price": "50",
+      "category": "Table Lamp",
+      "brand": "Osram",
+      "color": "Black",
+      "weight": "2.2",
+      "volume": "2.5",
+      "quantityInStock": "18"
+    },
+    {
+      "title": "Antique Candle Chandelier",
+      "price": "300",
+      "category": "Chandelier",
+      "brand": "Philips",
+      "color": "Brass",
+      "weight": "10",
+      "volume": "14",
+      "quantityInStock": "6"
+    },
+    {
+      "title": "Modern Pendant Light",
+      "price": "90",
+      "category": "Ceiling Light",
+      "brand": "Osram",
+      "color": "Silver",
+      "weight": "4",
+      "volume": "5",
+      "quantityInStock": "14"
+    },
+    {
+      "title": "Traditional Wall Sconce",
+      "price": "35",
+      "category": "Wall Sconce",
+      "brand": "Philips",
+      "color": "Bronze",
+      "weight": "2.3",
+      "volume": "2.2",
+      "quantityInStock": "16"
+    }
+  ]
+}

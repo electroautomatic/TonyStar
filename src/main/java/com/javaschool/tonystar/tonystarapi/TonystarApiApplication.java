@@ -8,6 +8,7 @@ public class TonystarApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TonystarApiApplication.class, args);
+		System.out.println("Hello Java Spring!!!");
 	}
 
 }
