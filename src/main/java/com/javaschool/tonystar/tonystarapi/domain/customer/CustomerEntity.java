@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Customer {
+public class CustomerEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;

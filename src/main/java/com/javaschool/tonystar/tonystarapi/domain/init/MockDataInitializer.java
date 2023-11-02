@@ -1,7 +1,7 @@
 package com.javaschool.tonystar.tonystarapi.domain.init;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.javaschool.tonystar.tonystarapi.domain.customer.Customer;
+import com.javaschool.tonystar.tonystarapi.domain.customer.CustomerEntity;
 import com.javaschool.tonystar.tonystarapi.domain.product.Product;
 import com.javaschool.tonystar.tonystarapi.repos.CustomerRepositry;
 import com.javaschool.tonystar.tonystarapi.repos.ProductRepository;
@@ -43,36 +43,16 @@ public class MockDataInitializer {
         ObjectMapper objectMapper = new ObjectMapper();
         String dataJson = Files.readString(Path.of("src/main/resources/mock-data/data.json"));
         MockData mockData = objectMapper.readValue(dataJson, MockData.class);
-//        Map<String, Customer> customerMap = new HashMap<>();
-        for (Customer customer : mockData.customers) {
-//            String photoFilename = "src/main/resources/mock-data/" + account.getId() + ".jpg";
-//            byte[] photoBytes = Files.readAllBytes(Path.of(photoFilename));
-//            String photoBase64 = Base64.encodeBase64String(photoBytes);
-//            account.setPhoto(photoBase64);
+        for (CustomerEntity customer : mockData.customers) {
+            customer.setAddress(customer.getAddress());
             customerRepositry.save(customer);
-//            customerMap.put(customerMap.getId(),customer);
         }
-//        for (Question question : mockData.questions) {
-//            question.setCreatedAt(OffsetDateTime.now());
-//            question.setAuthor(accountMap.get(question.getAuthor().getId()));
-//            for (Answer answer : question.getAnswers()) {
-//                answer.setCreatedAt(OffsetDateTime.now());
-//                answer.setQuestion(question);
-//                answer.setAuthor(accountMap.get(answer.getAuthor().getId()));
-//                for (Vote vote : answer.getVotes()) {
-//                    vote.setAnswer(answer);
-//                    vote.setUser(accountMap.get(vote.getUser().getId()));
-//                }
-//            }
-//            questionRepository.save(question);
-//        }
         for (Product products : mockData.products) {
             productRepository.save(products);
         }
     }
-
     private static class MockData {
-        private List<Customer> customers;
+        private List<CustomerEntity> customers;
         private List<Product> products;
 
         public List<Product> getProducts() {
@@ -83,11 +63,11 @@ public class MockDataInitializer {
             this.products = products;
         }
 
-        public List<Customer> getCustomers() {
+        public List<CustomerEntity> getCustomers() {
             return customers;
         }
 
-        public void setCustomers(List<Customer> customers) {
+        public void setCustomers(List<CustomerEntity> customers) {
             this.customers = customers;
         }
     }

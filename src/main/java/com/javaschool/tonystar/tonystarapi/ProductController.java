@@ -5,7 +5,7 @@ import com.javaschool.tonystar.tonystarapi.domain.product.Product;
 import com.javaschool.tonystar.tonystarapi.repos.ProductRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+//Controller without DTO
 @Controller
 public class ProductController {
 

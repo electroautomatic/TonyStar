@@ -4,61 +4,113 @@
       "name": "Lev",
       "surname": "Tolstoy",
       "dayOfBirth": "1828-09-09",
-      "email": "lev@gmail.com"
+      "email": "lev@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "Yasnaya Polyana",
+        "postalCode": "300005",
+        "street": "Tolstoy Estate",
+        "home": "1",
+        "apartment": ""
+      }
     },
     {
       "name": "Fyodor",
       "surname": "Dostoevsky",
       "dayOfBirth": "1821-11-11",
-      "email": "dostoevsky@gmail.com"
+      "email": "dostoevsky@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "St. Petersburg",
+        "postalCode": "191186",
+        "street": "Kuznechny Lane",
+        "home": "7",
+        "apartment": "3"
+      }
     },
     {
       "name": "Alexander",
       "surname": "Pushkin",
       "dayOfBirth": "1799-06-06",
-      "email": "pushkin@gmail.com"
+      "email": "pushkin@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "St. Petersburg",
+        "postalCode": "191014",
+        "street": "Naberezhnaya Reki Fontanki",
+        "home": "67",
+        "apartment": "8"
+      }
     },
     {
       "name": "Ivan",
       "surname": "Turgenev",
       "dayOfBirth": "1818-11-09",
-      "email": "turgenev@gmail.com"
-    },
-    {
-      "name": "Anton",
-      "surname": "Chekhov",
-      "dayOfBirth": "1860-01-29",
-      "email": "chekhov@gmail.com"
+      "email": "turgenev@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "Paris",
+        "postalCode": "75007",
+        "street": "Rue de la Grange Bateliere",
+        "home": "22",
+        "apartment": "4"
+      }
     },
     {
       "name": "Mikhail",
       "surname": "Lermontov",
       "dayOfBirth": "1814-10-15",
-      "email": "lermontov@gmail.com"
-    },
-    {
-      "name": "Nikolai",
-      "surname": "Gogol",
-      "dayOfBirth": "1809-03-31",
-      "email": "gogol@gmail.com"
+      "email": "lermontov@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "Pyatigorsk",
+        "postalCode": "357500",
+        "street": "Lermontov Avenue",
+        "home": "5",
+        "apartment": "6"
+      }
     },
     {
       "name": "Ivan",
       "surname": "Bunin",
       "dayOfBirth": "1870-10-22",
-      "email": "bunin@gmail.com"
+      "email": "bunin@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "Moscow",
+        "postalCode": "119034",
+        "street": "Nikitsky Boulevard",
+        "home": "12",
+        "apartment": "8"
+      }
     },
     {
       "name": "Anna",
       "surname": "Akmatova",
       "dayOfBirth": "1889-06-23",
-      "email": "akmatova@gmail.com"
+      "email": "akmatova@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "St. Petersburg",
+        "postalCode": "191123",
+        "street": "Fountain House",
+        "home": "4",
+        "apartment": "15"
+      }
     },
     {
       "name": "Boris",
       "surname": "Pasternak",
       "dayOfBirth": "1890-02-10",
-      "email": "pasternak@gmail.com"
+      "email": "pasternak@gmail.com",
+      "address": {
+        "country": "Russia",
+        "city": "Peredelkino",
+        "postalCode": "143513",
+        "street": "Pasternak Street",
+        "home": "3",
+        "apartment": "7"
+      }
     }
   ],
 

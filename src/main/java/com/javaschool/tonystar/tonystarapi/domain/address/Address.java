@@ -1,6 +1,6 @@
 package com.javaschool.tonystar.tonystarapi.domain.address;
 
-import com.javaschool.tonystar.tonystarapi.domain.customer.Customer;
+import com.javaschool.tonystar.tonystarapi.domain.customer.CustomerEntity;
 import com.javaschool.tonystar.tonystarapi.domain.order.Orders;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,7 +24,7 @@ public class Address {
     private Integer apartment;
 
     @OneToOne(mappedBy = "address")
-    private Customer customer;
+    private CustomerEntity customer;
 
     @OneToMany(mappedBy = "customerAddress")
     private List<Orders> order;

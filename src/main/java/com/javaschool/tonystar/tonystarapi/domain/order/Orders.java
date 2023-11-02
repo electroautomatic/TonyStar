@@ -1,10 +1,9 @@
 package com.javaschool.tonystar.tonystarapi.domain.order;
 
 import com.javaschool.tonystar.tonystarapi.domain.address.Address;
-import com.javaschool.tonystar.tonystarapi.domain.customer.Customer;
+import com.javaschool.tonystar.tonystarapi.domain.customer.CustomerEntity;
 import com.javaschool.tonystar.tonystarapi.domain.orderprops.DeliveryMethod;
 import com.javaschool.tonystar.tonystarapi.domain.orderprops.PaymentMethod;
-import com.javaschool.tonystar.tonystarapi.domain.product.Product;
 import com.javaschool.tonystar.tonystarapi.domain.sales.Sales;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -28,7 +27,7 @@ public class Orders {
 
     @ManyToOne
     @JoinColumn
-    private Customer customer;
+    private CustomerEntity customer;
 
     @ManyToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id")
