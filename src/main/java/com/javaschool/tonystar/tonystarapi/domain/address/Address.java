@@ -1,5 +1,6 @@
 package com.javaschool.tonystar.tonystarapi.domain.address;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.javaschool.tonystar.tonystarapi.domain.customer.CustomerEntity;
 import com.javaschool.tonystar.tonystarapi.domain.order.Orders;
 import jakarta.persistence.*;
@@ -24,6 +25,7 @@ public class Address {
     private Integer apartment;
 
     @OneToOne(mappedBy = "address")
+    @JsonIgnore
     private CustomerEntity customer;
 
     @OneToMany(mappedBy = "customerAddress")

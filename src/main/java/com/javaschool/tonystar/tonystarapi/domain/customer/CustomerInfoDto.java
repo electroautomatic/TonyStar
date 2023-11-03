@@ -1,5 +1,6 @@
 package com.javaschool.tonystar.tonystarapi.domain.customer;
 
+import com.javaschool.tonystar.tonystarapi.domain.address.Address;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,4 +20,7 @@ public class CustomerInfoDto {
     private String email;
 
     private String passoword;
+
+    private Address address;
+
 }
