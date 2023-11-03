@@ -1,5 +1,6 @@
 package com.javaschool.tonystar.tonystarapi.domain.customer;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.javaschool.tonystar.tonystarapi.domain.address.Address;
 import com.javaschool.tonystar.tonystarapi.domain.order.Orders;
 import jakarta.persistence.*;
@@ -14,13 +15,13 @@ import java.util.List;
 @Setter
 public class CustomerEntity {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+//    @GeneratedValue(strategy= GenerationType.AUTO)
+    private String id;
 
     private String name;
 
     private String surname;
-
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date dayOfBirth;
 
     private String email;

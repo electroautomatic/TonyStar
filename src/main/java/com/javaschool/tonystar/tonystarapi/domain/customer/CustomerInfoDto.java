@@ -9,7 +9,7 @@ import java.util.Date;
 @Setter
 public class CustomerInfoDto {
 
-    private Long id;
+    private String id;
 
     private String name;
 
