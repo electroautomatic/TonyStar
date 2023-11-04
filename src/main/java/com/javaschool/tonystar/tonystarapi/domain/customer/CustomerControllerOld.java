@@ -19,7 +19,7 @@ import java.util.UUID;
 //Controller with simple DTO
 
 //@Controller
-@RestController // same as Controller, but Response Bodies are by default
+//@RestController // same as Controller, but Response Bodies are by default
 @RequiredArgsConstructor
 public class CustomerControllerOld {
     private final CustomerRepositry customerRepositry;
