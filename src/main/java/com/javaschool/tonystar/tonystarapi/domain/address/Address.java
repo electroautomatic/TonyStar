@@ -21,7 +21,7 @@ public class Address {
     private String city;
     private Integer postalCode;
     private String street;
-    private String home;
+    private Integer home;
     private Integer apartment;
 
     @OneToOne(mappedBy = "address")

@@ -200,16 +200,14 @@ components:
           type: string
         postalCode:
           type: integer
-          format: int64
+
         street:
-          type: integer
-          format: int64
+          type: string
+
         home:
           type: integer
-          format: int64
         apartment:
           type: integer
-          format: int64
 
     ProductsInfo:
       properties:
