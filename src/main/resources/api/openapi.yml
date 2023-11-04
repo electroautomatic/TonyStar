@@ -1,0 +1,237 @@
+openapi: 3.0.3
+
+
+info:
+  title: TonyStar online shop
+  version: 1.0.0
+
+
+servers:
+  - url: http://localhost:9090/api/v1
+
+
+tags:
+
+  - name: Customer
+    description: Customer-related operations
+
+  - name: Product
+    description: Product-related operations
+
+  - name: Order
+    description: Order-related operations
+
+
+paths:
+
+  /customers:
+
+    get:
+      summary: 'Retrive a list of existing customers'
+      operationId: getCustomerList
+      tags:
+        - Customer
+      responses:
+        '200':
+          description: 'Successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerInfo'
+
+    post:
+      summary: 'Create a new customer'
+      operationId: createCustomer
+      tags:
+        - Customer
+      requestBody:
+        description: 'Object properties'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerInfo'
+      responses:
+        '201':
+          description: 'Successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerInfo'
+
+  /customers/{id}:
+
+    get:
+      summary: 'Retrive an customers by ID'
+      operationId: getCustomer
+      tags:
+        - Customer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerInfo'
+
+    put:
+      summary: 'Update an customer by ID'
+      operationId: updateCustomer
+      tags:
+        - Customer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: 'Object properties'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerInfo'
+      responses:
+        '204':
+          description: 'Successful operation'
+
+    delete:
+      summary: 'Delete an customer by ID'
+      operationId: deleteCustomer
+      tags:
+        - Customer
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: 'Successful operation'
+
+
+
+  /products:
+
+    get:
+      summary: 'Retrive a list of products'
+      operationId: getProductsList
+      tags:
+        - Product
+      responses:
+        '200':
+          description: 'Successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProductsInfo'
+
+    post:
+      summary: 'Create a new product'
+      operationId: createProduct
+      tags:
+        - Product
+      requestBody:
+        description: 'Object properties'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductsInfo'
+      responses:
+        '201':
+          description: 'Successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductsInfo'
+
+    delete:
+      summary: 'Delete an product by ID'
+      operationId: deleteProduct
+      tags:
+        - Product
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: 'Successful operation'
+
+components:
+  schemas:
+    CustomerInfo:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        surname:
+          type: string
+        dayOfBirth:
+          type: string
+          format: datetime
+        email:
+          type: string
+        passoword:
+          type: string
+        address:
+          $ref: '#/components/schemas/AddressInfo'
+    AddressInfo:
+      properties:
+        id:
+          type: integer
+          format: int64
+        country:
+          type: string
+        city:
+          type: string
+        postalCode:
+          type: integer
+          format: int64
+        street:
+          type: integer
+          format: int64
+        home:
+          type: integer
+          format: int64
+        apartment:
+          type: integer
+          format: int64
+
+    ProductsInfo:
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+        price:
+          type: integer
+          format: int64
+        category:
+          type: string
+        brand:
+          type: string
+        color:
+          type: string
+        weight:
+          type: integer
+        volume:
+          type: integer
+        quantityInStock:
+          type: integer
+
+
