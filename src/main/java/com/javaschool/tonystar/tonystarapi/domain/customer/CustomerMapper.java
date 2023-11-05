@@ -22,18 +22,23 @@ public class CustomerMapper {
         return dto;
     }
     private AddressInfoDto createAddressDto(Address address){
-        AddressInfoDto dto = new AddressInfoDto();
-        dto.setId(address.getId());
-        dto.setCountry(address.getCountry());
-        dto.setCity(address.getCity());
-        dto.setStreet(address.getStreet());
-        dto.setHome(address.getHome());
-        dto.apartment(address.getApartment());
-        return dto;
+        if (address != null) {
+            AddressInfoDto dto = new AddressInfoDto();
+            dto.setId(address.getId());
+            dto.setCountry(address.getCountry());
+            dto.setCity(address.getCity());
+            dto.setStreet(address.getStreet());
+            dto.setHome(address.getHome());
+            dto.setApartment(address.getApartment());
+            return dto;
+        } else {
+            // Обработка случая, когда address равен null (например, возвращение пустого AddressInfoDto или другой логики по вашему выбору)
+            return new AddressInfoDto();
+        }
     }
 
     public static Date convertStringToDate(String dateString) throws ParseException {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return dateFormat.parse(dateString);
     }
 

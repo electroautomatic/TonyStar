@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.ParseException;
 import java.util.List;
 
 @Log4j2
@@ -17,13 +18,20 @@ public class CustomerController implements CustomersApi {
     private final CustomerService customerService;
 
     @Override
-    public ResponseEntity<CustomerInfoDto> createCustomer(CustomerInfoDto customerInfoDto) {
-        return null;
+    public ResponseEntity<CustomerInfoDto> createCustomer(CustomerInfoDto dto) {
+        CustomerInfoDto result = null;
+        try {
+            result = customerService.createCustomer(dto);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return ResponseEntity.status(201).body(result);
     }
 
     @Override
     public ResponseEntity<Void> deleteCustomer(String id) {
-        return null;
+        customerService.deleteAccount(id);
+        return ResponseEntity.status(204).build();
     }
 
     @Override
@@ -35,11 +43,18 @@ public class CustomerController implements CustomersApi {
 
     @Override
     public ResponseEntity<List<CustomerInfoDto>> getCustomerList() {
-        return null;
+        List<CustomerInfoDto> result = customerService.getCustomerList();
+        return ResponseEntity.ok(result);
     }
 
+
     @Override
-    public ResponseEntity<Void> updateCustomer(String id, CustomerInfoDto customerInfoDto) {
-        return null;
+    public ResponseEntity<Void> updateCustomer(String id, CustomerInfoDto dto) {
+        try {
+            customerService.updateCustomer(id, dto);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return ResponseEntity.status(204).build();
     }
 }
