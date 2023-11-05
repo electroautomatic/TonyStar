@@ -1,10 +1,12 @@
 package com.javaschool.tonystar.tonystarapi.domain.customer;
 
+import com.javaschool.tonystar.tonystarapi.exeption.ResourceNotFoundException;
 import com.tsystems.javaschool.tonystar.api.CustomersApi;
 import com.tsystems.javaschool.tonystar.model.CustomerInfoDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.ParseException;
@@ -56,5 +58,11 @@ public class CustomerController implements CustomersApi {
             throw new RuntimeException(e);
         }
         return ResponseEntity.status(204).build();
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<?> handleNotFound(ResourceNotFoundException e) {
+        log.warn(e.getMessage());
+        return ResponseEntity.status(404).body(e.getMessage());
     }
 }

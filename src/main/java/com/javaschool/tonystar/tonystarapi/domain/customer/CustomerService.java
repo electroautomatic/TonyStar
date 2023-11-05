@@ -1,5 +1,6 @@
 package com.javaschool.tonystar.tonystarapi.domain.customer;
 
+import com.javaschool.tonystar.tonystarapi.exeption.ResourceNotFoundException;
 import com.javaschool.tonystar.tonystarapi.repos.CustomerRepositry;
 import com.tsystems.javaschool.tonystar.model.CustomerInfoDto;
 import jakarta.transaction.Transactional;
@@ -62,8 +63,8 @@ public class CustomerService {
     }
 
     public CustomerEntity loadCustomer(String id) {
-        return customerRepositry.findById(id).orElseThrow();
-//                .orElseThrow(() -> new ResourceNotFoundException("Account not found " + id));
+        return customerRepositry.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Account not found " + id));
     }
 
     private CustomerInfoDto createCustmerDto(CustomerEntity customerEntity) {
